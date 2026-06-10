@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  
+  /* Custom Eco Palette */
+  --color-eco-50: #f2f9f5;
+  --color-eco-100: #e2f3e8;
+  --color-eco-200: #c5e7d2;
+  --color-eco-500: #2e7d32;
+  --color-eco-600: #1b5e20;
+  --color-eco-800: #0f3311;
+  
+  /* Custom Earth Palette */
+  --color-earth-50: #faf8f5;
+  --color-earth-100: #f3ebd7;
+  --color-earth-500: #8d6e63;
+  --color-earth-700: #5d4037;
+  --color-earth-900: #3e2723;
+  
+  --color-accent-blue: #0284c7;
+}
+
+:root {
+  --background: #f9fbf9;
+  --foreground: #1c2e24;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom premium hover and animation effects */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Standard styling refinements for sliders and form inputs */
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #2e7d32;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
